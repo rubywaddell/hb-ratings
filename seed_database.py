@@ -28,3 +28,15 @@ for movie in movie_data:
                     movie['poster_path'])
                     
     movies_in_db.append(db_movie)
+
+for n in range(10):
+    email = f"user{n}@gmail.com"
+    password = "test"
+
+    db_user = crud.create_user(email=email, password=password)
+
+    for n in range(10):
+        movie = choice(movies_in_db)
+        score = randint(1,5)
+
+        db_rating = crud.create_rating(user=db_user, movie=movie, score=score)
