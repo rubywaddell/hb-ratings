@@ -13,6 +13,16 @@ def create_user(email, password):
 
     return user
 
+def show_users():
+    """Return a list of users"""
+
+    return User.query.all()
+
+def get_user_by_id(user_id):
+    """Return the first user with a given id"""
+
+    user = User.query.filter(User.user_id == user_id).first()
+    return user
 
 def create_movie(title, overview, release_date, poster_path):
     """Create and return a new movie"""
@@ -24,7 +34,16 @@ def create_movie(title, overview, release_date, poster_path):
 
     return movie
 
+def show_movie():
+    """Return a list of all movie objects"""
 
+    return Movie.query.all()
+
+def get_movie_by_id(movie_id):
+    """Return the first movie that has a given id"""
+
+    movie = Movie.query.filter(Movie.movie_id == movie_id).first()
+    return movie
 
 def create_rating(user, movie, score):
     """Create and return a new rating."""
