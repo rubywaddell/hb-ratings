@@ -24,6 +24,12 @@ def get_user_by_id(user_id):
     user = User.query.filter(User.user_id == user_id).first()
     return user
 
+def get_user_by_email(user_email):
+    """Determine if a user profile exists already"""
+
+    user = User.query.filter(User.user_email == user_email).first()
+    return user
+
 def create_movie(title, overview, release_date, poster_path):
     """Create and return a new movie"""
 
