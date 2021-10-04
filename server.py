@@ -13,6 +13,11 @@ app.secret_key = "%$E^R&T*()(UYTF"
 app.jinja_env.undefined = StrictUndefined
 # Replace this with routes and view functions!
 
+@app.route("/")
+def show_homepage():
+    """View homepage"""
+    return render_template("homepage.html")
+
 
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
